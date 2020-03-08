@@ -5,11 +5,11 @@ class PostsController < ApplicationController
   end
 
   def new
-   @post = Post.new
+    @post = Post.new
   end
 
   def create
-    Post.create(post_params)
+    Post.create(title: post_params[:title], content: post_params[:content], image: post_params[:image], user_id: current_user.id)
     redirect_to :action => "index"
   end
 
@@ -33,7 +33,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :content, :image)
+    params.require(:post).permit(:title, :content, :image, :user_id)
   end
 
 
