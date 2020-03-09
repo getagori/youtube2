@@ -1,7 +1,9 @@
+<div class="mx-auto" style="width: 300px;">
 <%= form_for @post, method: :post do |f| %>
   <h1>おすすめ芸人</h1>
   <p>タイトル<%= f.text_field :title %></p>
   <p>内容<%= f.text_area :content %></p>
   <p>画像:<%= f.file_field :image %></p>
-  <input type="submit" value="送信">
+  <button type="submit" class="btn btn-outline-primary">送信</button>
 <% end %>
+</div>
