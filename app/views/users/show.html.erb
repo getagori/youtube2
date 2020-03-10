@@ -1,10 +1,18 @@
-<% @user.posts.each do |post| %>
-  <p>
-    <%= post.title %>
-    ：<%= post.content %>
-    ：<%= image_tag post.image_url(:thumb) %>
-    <%= link_to '削除', "/posts/#{post.id}", method: :delete, data: {confirm: "削除しますか?"} %>
-    <%= link_to '編集', "/posts/#{post.id}/edit", method: :get %>
+<div class="container">
 
-  </p>
-<% end %>
+  <div class="row">
+
+    <% @user.posts.each do |post| %>
+      <div class="col-xs-6 col-lg-4">
+        <p>
+          <%= post.title %>
+          <%= image_tag post.image_url(:thumb) %>
+          <%= post.content %>
+          <%= link_to '削除', "/posts/#{post.id}", method: :delete, data: {confirm: "削除しますか?"} %>
+          <%= link_to '編集', "/posts/#{post.id}/edit", method: :get %>
+        </p>
+      </div>
+    <% end %>
+
+  </div>
+</div>
