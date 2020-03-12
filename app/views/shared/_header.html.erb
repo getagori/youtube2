@@ -37,15 +37,20 @@
 
         <% end %>
       </ul>
-
     </div>
-  </nav>
 
-  <div class="text-center mt-5">
+      <%= form_tag('/posts/search', method: :get) do %>
+      <%= text_field_tag :search_title %>
+      <%= submit_tag '検索' %>
+    <% end %>
 
-    <h3><span class="border border-primary">自分が面白いと思う芸人を登録してね！</span></h3>
+  
+</nav>
+
+<div class="text-center mt-5">
+
+  <h3>
+    <span class="border border-primary">自分が面白いと思う芸人を登録してね！</span></h3>
 </div>
-
-
 
 </header>

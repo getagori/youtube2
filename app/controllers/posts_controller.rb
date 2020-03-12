@@ -33,6 +33,11 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def search
+    post_search = PostSearch.new(params_post_search)
+    @posts = post_search.execute
+  end
+
 
 
   private
@@ -40,5 +45,9 @@ class PostsController < ApplicationController
     params.require(:post).permit(:title, :content, :image, :user_id)
   end
 
+
+  def params_post_search
+    params.permit(:search_title)
+  end
 
 end
