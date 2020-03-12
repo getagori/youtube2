@@ -1,18 +1,45 @@
 <div class="container">
 
-  <div class="row">
+  <div class="d-flex justify-content-between">
+    <div class="row">
 
-    <% @user.posts.each do |post| %>
-      <div class="col-xs-6 col-lg-4">
-        <p>
-          <%= post.title %>
-          <%= image_tag post.image_url(:thumb) %>
-          <%= post.content %>
-          <%= link_to '削除', "/posts/#{post.id}", method: :delete, data: {confirm: "削除しますか?"} %>
-          <%= link_to '編集', "/posts/#{post.id}/edit", method: :get %>
-        </p>
+      <% @user.posts.each do |post| %>
+
+        <div class="col-xs-6 col-md-6 col-lg-4 mt-5 mb-2 text-center ">
+          <div class="card img-thumbnail border-primary">
+
+            <img class="card-img-top">
+              <%= link_to post_path(post) do %>
+              <%= image_tag post.image_url(:thumb)%>
+            <% end %>
+          </img>
+
+          <div class="card-body ">
+
+            <h5 class="card-title">
+              <strong>
+                <%= post.title %>
+              </strong>
+
+            </h5>
+
+            <div class="card-text  ">
+              <p>
+                <%= post.content %>
+
+              </p>
+
+              <button type="button" class="btn btn-outline-primary"><%= link_to '編集', "/posts/#{post.id}/edit", method: :get %></button>
+              <button type="button" class="btn btn-outline-danger"><%= link_to '削除', "/posts/#{post.id}", method: :delete, data: {confirm: "削除しますか?"} %></button>
+
+            </div>
+
+          </div>
+
+        </div>
       </div>
     <% end %>
 
   </div>
+</div>
 </div>

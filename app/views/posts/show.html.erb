@@ -1,5 +1,29 @@
-<p>
-  <%= @post.title %>
-  <%= image_tag @post.image_url(:thumb) %>
-  <%= @post.content %>
-</p>
+<div class="container">
+
+
+    <div class="row">
+
+      <div class="col-xs-6 col-md-6 col-lg-4 mt-5 text-center mx-auto ">
+        <div class="card img-thumbnail border-primary">
+
+          <img class="card-img-top">
+
+            <%= image_tag @post.image_url(:thumb)%>
+
+          </img>
+
+          <div class="card-body ">
+
+            <h5 class="card-title">
+              <strong>
+                <%= @post.title %>
+              </strong>
+
+            </h5>
+
+            <div class="card-text  ">
+              <p><%= @post.content %></p>
+            </div>
+          </div>
+
+      </div>

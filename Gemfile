@@ -36,6 +36,7 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+#管理者機能
 gem 'activeadmin'
 
 # ログイン機能
@@ -50,8 +51,12 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'devise-bootstrap-views', '~> 1.0'
 
+#画像投稿機能
 gem 'carrierwave'
 gem 'rmagick'
+
+#検索機能
+gem 'ransack'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
