@@ -1,18 +1,23 @@
 <div class="container">
+<div class="row">
 
-  <div class="d-flex justify-content-between">
-    <div class="row">
-      <% if user_signed_in? %>
-        <% @posts.each do |post| %>
 
-          <div class="col-xs-6 col-md-6 col-lg-4 mt-5 mb-2 text-center ">
-            <div class="card img-thumbnail border-secondary">
+    <% if user_signed_in? %>
+       <% @posts.each do |post| %>
+
+
+    <div class="mr-5 mx-auto mt-5 text-center">
+
+      <div class="card img-thumbnail border-secondary">
+
+
 
               <img class="card-img-top">
                 <%= link_to post_path(post) do %>
                 <%= image_tag post.image_url(:thumb)%>
               <% end %>
             </img>
+
 
             <div class="card-body  ">
 
@@ -35,6 +40,8 @@
     <% else %>
       <p>ログインしてください</p>
     <% end %>
+
+
   </div>
 </div>
 </div>
